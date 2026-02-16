@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@gooey-ui/core'],
+  transpilePackages: ['goey-toast'],
 };
 
 export default nextConfig;

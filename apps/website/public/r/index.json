@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "gooey-ui",
+  "homepage": "https://gooey-toast.vercel.app",
+  "items": [
+    {
+      "name": "gooey-toaster",
+      "type": "registry:ui",
+      "title": "Gooey Toaster",
+      "description": "Morphing blob toast notifications with organic pill-to-blob animations, promise tracking, and full customization.",
+      "dependencies": ["gooey-ui", "motion"],
+      "files": [
+        {
+          "path": "ui/gooey-toaster.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

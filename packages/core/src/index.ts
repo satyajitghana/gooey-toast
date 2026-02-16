@@ -1,30 +1,12 @@
-// Main toast API
-export { toast } from './goey-toast';
-export type { ToastAPI } from './goey-toast';
-
-// Components
-export { GoeyToaster, GoeyToast, ToastErrorBoundary } from './components';
-export type { GoeyToasterProps, GoeyToastProps } from './components';
-
-// Hooks
-export { usePrefersReducedMotion } from './hooks';
-
-// Types
+import './components/gooey-toast.css'
+export { GooeyToaster } from './components/gooey-toaster'
+export { gooeyToast } from './gooey-toast'
 export type {
-  ToastVariant,
-  ToastPosition,
-  ToastPhase,
-  AnimationPreset,
-  AriaLive,
-  ToastAction,
-  ToastClassNames,
-  SpringConfig,
-  CustomAnimationConfig,
-  ToastOptions,
-  PromiseToastData,
-  ToasterConfig,
-  ToastReturn,
-} from './types';
-
-// Utilities
-export { cn } from './lib/utils';
+  GooeyToastOptions,
+  GooeyPromiseData,
+  GooeyToasterProps,
+  GooeyToastAction,
+  GooeyToastClassNames,
+  GooeyToastTimings,
+  GooeyToastType,
+} from './types'
