@@ -4,12 +4,39 @@ Beautiful toast notifications with organic blob morphing animations.
 
 ## Installation
 
+### Using shadcn CLI (Recommended)
+
+The easiest way to add Gooey Toast to your project:
+
+```bash
+# npm
+npx shadcn@latest add https://gooey-toast.vercel.app/r/gooey-toaster.json
+
+# pnpm
+pnpm dlx shadcn@latest add https://gooey-toast.vercel.app/r/gooey-toaster.json
+
+# yarn
+npx shadcn@latest add https://gooey-toast.vercel.app/r/gooey-toaster.json
+
+# bun
+bunx shadcn@latest add https://gooey-toast.vercel.app/r/gooey-toaster.json
+```
+
+This will automatically:
+- Install `@gooey-ui/core` package
+- Create a wrapper component at `components/ui/gooey-toaster.tsx`
+- Import required styles
+
+### Manual Installation
+
 ```bash
 npm install @gooey-ui/core
 # or
 pnpm add @gooey-ui/core
 # or
 yarn add @gooey-ui/core
+# or
+bun add @gooey-ui/core
 ```
 
 ## Quick Start
