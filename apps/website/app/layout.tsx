@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@gooey-ui/core/styles.css';
 import './globals.css';
 
 export const metadata: Metadata = {

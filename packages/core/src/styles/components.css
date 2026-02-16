@@ -3,50 +3,50 @@
 /* CSS Custom Properties for theming */
 :root {
   /* Base colors (light mode) */
-  --toast-bg: theme('colors.white');
-  --toast-text: theme('colors.gray.900');
-  --toast-border: theme('colors.gray.200');
+  --toast-bg: #ffffff;
+  --toast-text: #111827;
+  --toast-border: #e5e7eb;
 
   /* Variant colors */
-  --toast-success-bg: theme('colors.green.50');
-  --toast-success-text: theme('colors.green.800');
-  --toast-success-icon: theme('colors.green.600');
+  --toast-success-bg: #f0fdf4;
+  --toast-success-text: #166534;
+  --toast-success-icon: #16a34a;
 
-  --toast-error-bg: theme('colors.red.50');
-  --toast-error-text: theme('colors.red.800');
-  --toast-error-icon: theme('colors.red.600');
+  --toast-error-bg: #fef2f2;
+  --toast-error-text: #991b1b;
+  --toast-error-icon: #dc2626;
 
-  --toast-warning-bg: theme('colors.yellow.50');
-  --toast-warning-text: theme('colors.yellow.900');
-  --toast-warning-icon: theme('colors.yellow.600');
+  --toast-warning-bg: #fefce8;
+  --toast-warning-text: #713f12;
+  --toast-warning-icon: #ca8a04;
 
-  --toast-info-bg: theme('colors.blue.50');
-  --toast-info-text: theme('colors.blue.800');
-  --toast-info-icon: theme('colors.blue.600');
+  --toast-info-bg: #eff6ff;
+  --toast-info-text: #1e40af;
+  --toast-info-icon: #2563eb;
 }
 
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --toast-bg: theme('colors.gray.800');
-    --toast-text: theme('colors.gray.100');
-    --toast-border: theme('colors.gray.700');
+    --toast-bg: #1f2937;
+    --toast-text: #f3f4f6;
+    --toast-border: #374151;
 
-    --toast-success-bg: theme('colors.green.950');
-    --toast-success-text: theme('colors.green.100');
-    --toast-success-icon: theme('colors.green.400');
+    --toast-success-bg: #022c22;
+    --toast-success-text: #d1fae5;
+    --toast-success-icon: #4ade80;
 
-    --toast-error-bg: theme('colors.red.950');
-    --toast-error-text: theme('colors.red.100');
-    --toast-error-icon: theme('colors.red.400');
+    --toast-error-bg: #450a0a;
+    --toast-error-text: #fecaca;
+    --toast-error-icon: #f87171;
 
-    --toast-warning-bg: theme('colors.yellow.950');
-    --toast-warning-text: theme('colors.yellow.100');
-    --toast-warning-icon: theme('colors.yellow.400');
+    --toast-warning-bg: #422006;
+    --toast-warning-text: #fef08a;
+    --toast-warning-icon: #facc15;
 
-    --toast-info-bg: theme('colors.blue.950');
-    --toast-info-text: theme('colors.blue.100');
-    --toast-info-icon: theme('colors.blue.400');
+    --toast-info-bg: #172554;
+    --toast-info-text: #dbeafe;
+    --toast-info-icon: #60a5fa;
   }
 }
 

@@ -69,31 +69,31 @@ export default function Home() {
                   Default
                 </button>
                 <button
-                  onClick={() => toast.success('Operation successful!', { variant: 'success' })}
+                  onClick={() => toast.success('Operation successful!')}
                   className="px-4 py-3 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-lg font-medium hover:scale-105 transition-transform"
                 >
                   Success
                 </button>
                 <button
-                  onClick={() => toast.error('Something went wrong', { variant: 'error' })}
+                  onClick={() => toast.error('Something went wrong')}
                   className="px-4 py-3 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-lg font-medium hover:scale-105 transition-transform"
                 >
                   Error
                 </button>
                 <button
-                  onClick={() => toast.warning('Please be careful', { variant: 'warning' })}
+                  onClick={() => toast.warning('Please be careful')}
                   className="px-4 py-3 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 rounded-lg font-medium hover:scale-105 transition-transform"
                 >
                   Warning
                 </button>
                 <button
-                  onClick={() => toast.info('Did you know?', { variant: 'info' })}
+                  onClick={() => toast.info('Did you know?')}
                   className="px-4 py-3 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-lg font-medium hover:scale-105 transition-transform"
                 >
                   Info
                 </button>
                 <button
-                  onClick={() => toast.loading('Loading...', { variant: 'loading' })}
+                  onClick={() => toast.loading('Loading...')}
                   className="px-4 py-3 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 rounded-lg font-medium hover:scale-105 transition-transform"
                 >
                   Loading
@@ -108,7 +108,6 @@ export default function Home() {
                 <button
                   onClick={() => {
                     toast.success('Check out this description!', {
-                      variant: 'success',
                       description: 'Toasts can have additional description text for more context.',
                     });
                   }}
@@ -124,7 +123,9 @@ export default function Home() {
                       variant: 'default',
                       action: {
                         label: 'Undo',
-                        onClick: () => toast.success('Action undone!'),
+                        onClick: () => {
+                          toast.success('Action undone!');
+                        },
                       },
                     });
                   }}
