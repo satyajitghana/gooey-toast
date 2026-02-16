@@ -5,11 +5,11 @@ Beautiful toast notifications with organic blob morphing animations.
 ## Installation
 
 ```bash
-npm install @gooey-ui/core framer-motion
+npm install @gooey-ui/core
 # or
-pnpm add @gooey-ui/core framer-motion
+pnpm add @gooey-ui/core
 # or
-yarn add @gooey-ui/core framer-motion
+yarn add @gooey-ui/core
 ```
 
 ## Quick Start
@@ -42,7 +42,7 @@ function MyComponent() {
 
 - 🎨 Five beautiful variants (default, success, error, warning, info)
 - 🌊 Organic blob morphing animations
-- ⚡ Built on Framer Motion for smooth 60fps animations
+- ⚡ Built on Motion for smooth 60fps animations
 - 🎯 TypeScript-first with full type safety
 - 🌙 Dark mode support
 - ♿ WCAG 2.2 Level AA accessible
