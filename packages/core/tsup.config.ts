@@ -9,7 +9,7 @@ export default defineConfig({
   clean: true,
   treeshake: true,
   minify: false, // Let consumers handle minification
-  external: ['react', 'react-dom', 'framer-motion', 'sonner'],
+  external: ['react', 'react-dom', 'motion', 'sonner'],
   esbuildOptions(options) {
     options.banner = {
       js: '"use client";', // Mark as client component for Next.js App Router
