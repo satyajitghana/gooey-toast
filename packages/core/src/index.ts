@@ -3,8 +3,8 @@ export { toast } from './goey-toast';
 export type { ToastAPI } from './goey-toast';
 
 // Components
-export { GoeyToaster } from './components';
-export type { GoeyToasterProps } from './components';
+export { GoeyToaster, GoeyToast, ToastErrorBoundary } from './components';
+export type { GoeyToasterProps, GoeyToastProps } from './components';
 
 // Hooks
 export { usePrefersReducedMotion } from './hooks';
