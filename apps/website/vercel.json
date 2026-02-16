@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd ../.. && pnpm install && pnpm build --filter=@gooey-ui/website",
+  "buildCommand": "cd ../.. && pnpm build --filter=@gooey-ui/website",
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "outputDirectory": ".next"
