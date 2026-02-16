@@ -1,0 +1,74 @@
+{
+  "name": "@gooey-ui/core",
+  "version": "0.1.0",
+  "description": "Beautiful toast notifications with organic blob morphing animations",
+  "author": "Gooey UI Contributors",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "react",
+    "toast",
+    "notification",
+    "animation",
+    "motion",
+    "tailwind",
+    "ui",
+    "component",
+    "gooey",
+    "blob"
+  ],
+  "scripts": {
+    "build": "tsup && pnpm build:css",
+    "build:css": "(grep -v '^@import' ./src/styles/index.css; cat ./src/styles/base.css ./src/styles/components.css) > ./dist/styles.css",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "motion": "^12.0.0",
+    "sonner": "^2.0.7"
+  },
+  "devDependencies": {
+    "@axe-core/react": "^4.8.4",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitest/ui": "^4.0.18",
+    "eslint": "^9.39.2",
+    "happy-dom": "^13.6.2",
+    "tailwindcss": "^4.1.18",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
