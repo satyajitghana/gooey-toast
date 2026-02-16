@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -24,10 +24,8 @@ export class ToastErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('Toast error boundary caught an error:', error, errorInfo);
-    }
+    // Log error to console
+    console.error('Toast error boundary caught an error:', error, errorInfo);
   }
 
   render() {

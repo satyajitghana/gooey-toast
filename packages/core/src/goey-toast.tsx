@@ -13,16 +13,30 @@ function toast(
   message: string | React.ReactNode,
   options?: ToastOptions
 ): ToastReturn {
-  const { variant = 'default', ...restOptions } = options || {};
+  const {
+    variant = 'default',
+    data,
+    spring,
+    bounce,
+    animationPreset,
+    customAnimation,
+    ariaLive,
+    ariaLabel,
+    dismissible,
+    closeButton,
+    pauseOnHover,
+    onDismiss,
+    onAction,
+    fillColor,
+    borderColor,
+    borderWidth,
+    classNames,
+    ...sonnerOptions
+  } = options || {};
 
-  return sonnerToast(message, {
-    ...restOptions,
-    // Pass variant as data for custom rendering
-    data: {
-      ...restOptions.data,
-      variant,
-    },
-  });
+  // For now, use basic Sonner toast
+  // In future phases, we'll integrate custom rendering
+  return sonnerToast(message, sonnerOptions);
 }
 
 /**
@@ -72,55 +86,59 @@ toast.loading = function (
   message: string | React.ReactNode,
   options?: Omit<ToastOptions, 'variant'>
 ): ToastReturn {
-  return toast(message, {
-    ...options,
-    variant: 'default',
-    duration: Infinity, // Loading toasts don't auto-dismiss
-    data: {
-      ...options?.data,
-      phase: 'loading',
-    },
+  const {
+    data,
+    spring,
+    bounce,
+    animationPreset,
+    customAnimation,
+    ariaLive,
+    ariaLabel,
+    dismissible,
+    closeButton,
+    pauseOnHover,
+    onDismiss,
+    onAction,
+    fillColor,
+    borderColor,
+    borderWidth,
+    classNames,
+    ...sonnerOptions
+  } = options || {};
+
+  return sonnerToast.loading(message, {
+    ...sonnerOptions,
+    duration: Infinity,
   });
 };
 
 /**
  * Show a promise-based toast that updates based on promise state
  */
-toast.promise = async function <T, TData = unknown>(
+toast.promise = function <T, TData = unknown>(
   promise: Promise<T> | (() => Promise<T>),
   data: PromiseToastData<T, TData>
 ): Promise<T> {
   const promiseInstance = typeof promise === 'function' ? promise() : promise;
 
-  return sonnerToast.promise(promiseInstance, {
-    loading: data.loading,
+  // Use Sonner's promise method directly
+  sonnerToast.promise(promiseInstance, {
+    loading: data.loading as string,
     success: (result: T) => {
       if (typeof data.success === 'function') {
-        return data.success(result);
+        return data.success(result) as string;
       }
-      return data.success;
+      return data.success as string;
     },
     error: (error: unknown) => {
       if (typeof data.error === 'function') {
-        return data.error(error);
+        return data.error(error) as string;
       }
-      return data.error;
+      return data.error as string;
     },
-    description: data.description
-      ? {
-          loading: data.description.loading,
-          success:
-            typeof data.description.success === 'function'
-              ? (result: T) => data.description!.success!(result as T)
-              : data.description.success,
-          error:
-            typeof data.description.error === 'function'
-              ? (error: unknown) => data.description!.error!(error)
-              : data.description.error,
-        }
-      : undefined,
-    ...data.options,
-  }) as Promise<T>;
+  });
+
+  return promiseInstance;
 };
 
 /**
@@ -146,15 +164,30 @@ toast.update = function (
   id: string | number,
   options: Partial<ToastOptions>
 ): void {
-  const { variant, ...restOptions } = options;
+  const {
+    variant,
+    data,
+    spring,
+    bounce,
+    animationPreset,
+    customAnimation,
+    ariaLive,
+    ariaLabel,
+    dismissible,
+    closeButton,
+    pauseOnHover,
+    onDismiss,
+    onAction,
+    fillColor,
+    borderColor,
+    borderWidth,
+    classNames,
+    ...sonnerOptions
+  } = options;
 
-  sonnerToast(restOptions.title || '', {
+  sonnerToast(sonnerOptions.title || '', {
     id,
-    ...restOptions,
-    data: {
-      ...restOptions.data,
-      variant: variant || undefined,
-    },
+    ...sonnerOptions,
   });
 };
 

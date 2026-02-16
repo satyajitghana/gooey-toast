@@ -1,4 +1,3 @@
-import React from 'react';
 import { Toaster } from 'sonner';
 import type { ToasterConfig } from '../../types';
 
@@ -22,7 +21,6 @@ export function GoeyToaster({
   expand = false,
   offset = 16,
   richColors = false,
-  closeOnPageNavigate = false,
   zIndex = 9999,
   className,
 }: GoeyToasterProps) {
@@ -41,8 +39,6 @@ export function GoeyToaster({
       visibleToasts={maxToasts}
       gap={gap}
       style={{ zIndex }}
-      // Use unstyled mode for complete custom styling
-      unstyled={false}
     />
   );
 }
